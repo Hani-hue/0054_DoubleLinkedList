@@ -93,7 +93,7 @@ public:
         cin >> rollno;
 
         Node *current = NULL;
-        // step 1 : Transverse the list to find the node
+        // step 1 : Traverse the list to find the node
         while (current != NULL && current->noMhs != rollno)
             current = current->next;
 
@@ -125,4 +125,28 @@ public:
         // step 5 Delete the node
         delete current;
         cout << "Record with roll number " << rollno << "deleted" << endl;
+    }
+    void transverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        // step 1 : Mark first node as currentNode
+        Node *currentNode = START;
+
+        // step 2 : Repeat until currentNode == NULL
+        cout << "\nRecords in ascending order od roll number are: \n ";
+        int i = 0;
+        while (currentNode != NULL)
+        {
+
+            cout << i + 1 << ". " << currentNode->noMhs << " " << endl;
+
+            // step 3 : move to the next node
+            currentNode = currentNode->next;
+            i++;
+        }
     }
