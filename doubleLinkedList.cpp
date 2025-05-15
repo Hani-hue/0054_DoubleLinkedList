@@ -77,5 +77,28 @@ public:
         if (current->next != NULL)
             current->next->prev = newNode; // step 9c
 
-        current->next = newNode; // tsep 9d: current.next = newNode
+        current->next = newNode; // step 9d: current.next = newNode
     }
+
+    void hapus()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        cout << "\nEnter the roll number of the student whose record is to be deleted: ";
+        int rollno;
+        cin >> rollno;
+
+        Node *current = NULL;
+        // step 1 : Transverse the list to find the node
+        while (current != NULL && current->noMhs != rollno)
+            current = current->next;
+
+        if (current == NULL)
+        {
+        }
+    }
+}
